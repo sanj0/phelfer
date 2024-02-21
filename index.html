@@ -13,17 +13,17 @@
         <p>Die Herzfrequenzreserve ist die Differenz zwischen HFPeak und Ruhepuls.</p>
         <p>
             <label>Alter</label>
-            <input id="inputAge" type="number" placeholder="Alter in Jahren"
+            <input id="inputAge" type="number" inputmode="numeric" placeholder="Alter in Jahren"
                 oninput="calcReserve()"
                 onchange="calcReserve()">
             <br>
             <label>Ruhepuls</label>
-            <input id="inputResting" type="number" placeholder="Ruhepuls"
+            <input id="inputResting" type="number" inputmode="numeric" placeholder="Ruhepuls"
                 oninput="calcReserve()"
                 onchange="calcReserve()">
         </p>
         <p>
-            <label>Herfrequenzreserve: </label>
+            <label>Herzfrequenzreserve: </label>
             <strong id="outputReserve">NaN</strong>
             &nbsp;
             &nbsp;
@@ -32,13 +32,13 @@
         </p>
         <h2>Trainingsfrequenz und Borgscala</h2>
         <p>
-            <label>Untere Schranke</label>
-            <input id="inputPercent1" type="number" placeholder="Prozentzahl"
+            <label>Untere Schranke % </label>
+            <input id="inputPercent1" type="number" inputmode="numeric" placeholder="Prozentzahl"
                 oninput="calcBorg()"
                 onchange="calcBorg()">
             <br>
-            <label>Obere Schranke</label>
-            <input id="inputPercent2" type="number" placeholder="Prozentzahl"
+            <label>Obere Schranke % </label>
+            <input id="inputPercent2" type="number" inputmode="numeric" placeholder="Prozentzahl"
                 oninput="calcBorg()"
                 onchange="calcBorg()">
         </p>

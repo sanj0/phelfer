@@ -28,11 +28,12 @@ function calcBorg() {
     let freqMin = ((min * reserve) / 100.0) + resting;
     let freqMax = ((max * reserve) / 100.0) + resting;
 
-    let borgMin = Math.round(freqMin * 0.1) * 10;
-    let borgMax = Math.round(freqMax * 0.1) * 10;
+    let borgMin = Math.round(freqMin * 0.1);
+    let borgMax = Math.round(freqMax * 0.1);
 
-    document.getElementById(OUTPUT_FREQ_MIN).innerHTML = freqMin;
-    document.getElementById(OUTPUT_FREQ_MAX).innerHTML = freqMax;
+    document.getElementById(OUTPUT_FREQ_MIN).innerHTML = Math.round(freqMin * 100) / 100;
+    document.getElementById(OUTPUT_FREQ_MAX).innerHTML = Math.round(freqMax * 100) / 100;
     document.getElementById(OUTPUT_BORG_MIN).innerHTML = borgMin;
     document.getElementById(OUTPUT_BORG_MAX).innerHTML = borgMax;
 }
+
