@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>PHelfer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <h1>PHelfer</h1>
+        <h2>Herzfrequenzreserve</h2>
+        <p>Die Herzfrequenzreserve ist die Differenz zwischen HFPeak und Ruhepuls.</p>
+        <p>
+            <label>Alter</label>
+            <input id="inputAge" type="number" placeholder="Alter in Jahren"
+                oninput="calcReserve()"
+                onchange="calcReserve()">
+            <label>Ruhepuls</label>
+            <input id="inputResting" type="number" placeholder="Ruhepuls"
+                oninput="calcReserve()"
+                onchange="calcReserve()">
+        </p>
+        <p>
+            <label>Herfrequenzreserve: </label>
+            <strong id="outputReserve">NaN</strong>
+            &nbsp;
+            &nbsp;
+            <label>HFPeak: </label>
+            <strong id="outputHFPeak">NaN</strong>
+        </p>
+        <h2>Trainingsfrequenz und Borgscala</h2>
+        <p>
+            <label>Untere Schranke</label>
+            <input id="inputPercent1" type="number" placeholder="Prozentzahl"
+                oninput="calcBorg()"
+                onchange="calcBorg()">
+            <label>Obere Schranke</label>
+            <input id="inputPercent2" type="number" placeholder="Prozentzahl"
+                oninput="calcBorg()"
+                onchange="calcBorg()">
+        </p>
+        <p>
+            <label>Trainingsfrequenz: </label>
+            <strong id="outputFreqMin">NaN</strong>
+            &nbsp; – &nbsp;
+            <strong id="outputFreqMax">NaN</strong>
+        </p>
+        <p>
+            <label>Borgscala: </label>
+            <strong id="outputBorgMin">NaN</strong>
+            &nbsp; – &nbsp;
+            <strong id="outputBorgMax">NaN</strong>
+        </p>
+    </body>
+</html>
