@@ -10,7 +10,6 @@
     <body>
         <h1>PHelfer</h1>
         <h2>Herzfrequenzreserve</h2>
-        <p>Die Herzfrequenzreserve ist die Differenz zwischen HFPeak und Ruhepuls.</p>
         <p>
             <label>Alter</label>
             <input id="inputAge" type="number" inputmode="numeric" placeholder="Alter in Jahren"
@@ -22,16 +21,18 @@
                 oninput="calcReserve()"
                 onchange="calcReserve()">
         </p>
-        <p>
+        <div class="result-container">
+        <p class="result-p">
             <label>Herzfrequenzreserve: </label>
-            <strong id="outputReserve">NaN</strong>
-            &nbsp;
-            &nbsp;
-            <label>HFPeak: </label>
-            <strong id="outputHFPeak">NaN</strong>
+            <strong id="outputReserve" class="result">NaN</strong>
         </p>
+        <p class="result-p">
+            <label>HFPeak: </label>
+            <strong id="outputHFPeak" class="result">NaN</strong>
+        </p>
+        </div>
         <h2>Trainingsfrequenz und Borgscala</h2>
-        <p>
+        <p class="result-p">
             <label>Untere Schranke % </label>
             <input id="inputPercent1" type="number" inputmode="numeric" placeholder="Prozentzahl"
                 oninput="calcBorg()"
@@ -42,17 +43,17 @@
                 oninput="calcBorg()"
                 onchange="calcBorg()">
         </p>
-        <p>
+        <p class="result-p">
             <label>Trainingsfrequenz: </label>
-            <strong id="outputFreqMin">NaN</strong>
+            <strong id="outputFreqMin" class="result">NaN</strong>
             &nbsp; – &nbsp;
-            <strong id="outputFreqMax">NaN</strong>
+            <strong id="outputFreqMax" class="result">NaN</strong>
         </p>
         <p>
             <label>Borgscala: </label>
-            <strong id="outputBorgMin">NaN</strong>
+            <strong id="outputBorgMin" class="result">NaN</strong>
             &nbsp; – &nbsp;
-            <strong id="outputBorgMax">NaN</strong>
+            <strong id="outputBorgMax" class="result">NaN</strong>
         </p>
     </body>
 </html>
