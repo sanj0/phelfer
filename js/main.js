@@ -10,12 +10,18 @@ const OUTPUT_FREQ_MAX = "outputFreqMax";
 const OUTPUT_BORG_MIN = "outputBorgMin";
 const OUTPUT_BORG_MAX = "outputBorgMax";
 
+let age = NaN;
 let reserve = NaN;
 let resting = NaN;
+let min = NaN;
+let max = NaN;
+
+calcReserve();
+calcBorg();
 
 function calcReserve() {
-    let age = parseFloat(document.getElementById(AGE_INPUT_ID).value);
-    resting = parseFloat(document.getElementById(RESTING_INPUT_ID).value);
+    readAge();
+    readResting();
     let hfpeak = 209 - 0.72 * age;
     reserve = hfpeak - resting;
     document.getElementById(OUTPUT_HFPEAK_ID).innerHTML = hfpeak;
@@ -23,8 +29,7 @@ function calcReserve() {
 }
 
 function calcBorg() {
-    let min = parseFloat(document.getElementById(MIN_INPUT_ID).value);
-    let max = parseFloat(document.getElementById(MAX_INPUT_ID).value);
+    readMinMax();
     let freqMin = ((min * reserve) / 100.0) + resting;
     let freqMax = ((max * reserve) / 100.0) + resting;
 
@@ -35,5 +40,18 @@ function calcBorg() {
     document.getElementById(OUTPUT_FREQ_MAX).innerHTML = Math.round(freqMax * 100) / 100;
     document.getElementById(OUTPUT_BORG_MIN).innerHTML = borgMin;
     document.getElementById(OUTPUT_BORG_MAX).innerHTML = borgMax;
+}
+
+function readAge() {
+    age = parseFloat(document.getElementById(AGE_INPUT_ID).value);
+}
+
+function readResting() {
+    resting = parseFloat(document.getElementById(RESTING_INPUT_ID).value);
+}
+
+function readMinMax() {
+    min = parseFloat(document.getElementById(MIN_INPUT_ID).value);
+    max = parseFloat(document.getElementById(MAX_INPUT_ID).value);
 }
 
